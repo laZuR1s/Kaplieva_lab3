@@ -32,8 +32,7 @@ int main()
 			{
 				//std::cout << "Задача 1\n";
 				int n;
-				std::cout << "\nВведите количество слагаемых: ";
-				std::cin >> n;
+				Read_and_check(n, [](int x)->bool {return true; }, "\nВведите количество слагаемых: ");
 				std::cout << "-------------------------------------" << '\n';
 				print_answer("Приближенное значение", sum_series(x, n));
 			}
@@ -43,8 +42,7 @@ int main()
 			{
 				//std::cout << "Задача 2\n";
 				double eps;
-				std::cout << "\nВведите точность вычисления: ";
-				std::cin >> eps;
+				Read_and_check(eps, [](double x)->bool {return true; }, "\nВведите точность вычисления: ");
 				int count = 0;
 				double res = sum_series(x, eps, count);
 				std::cout << "-------------------------------------" << '\n';
